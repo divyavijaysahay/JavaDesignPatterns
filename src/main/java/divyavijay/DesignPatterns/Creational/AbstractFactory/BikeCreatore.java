@@ -1,5 +1,15 @@
 package divyavijay.DesignPatterns.Creational.AbstractFactory;
 
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.BikeType;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.Handle;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.MountainBikeHandle;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.MountainBikeTire;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.RoadBikeHandle;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.RoadBikeTire;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.Tire;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.factory.BikeFactory;
+import divyavijay.DesignPatterns.Creational.AbstractFactory.factory.FactoryCreator;
+
 /**
  * @Date : Oct 9, 2019
  *
@@ -16,20 +26,26 @@ public class BikeCreatore {
 	private static void createBikeWithFactory(BikeType bikeType) {
 		BikeFactory bikeFactory = FactoryCreator.createFactory(bikeType);
 		Tire tire = bikeFactory.createTire();
+		Handle handle = bikeFactory.createHandle();
+		
 		System.out.println(tire.getDescription());
+		System.out.println(handle.getDescription());
 	}
 
 	private static void createBikeWithoutFactory(BikeType type) {
-		BikeFactory bikeFactory = null;
-		switch (type) {
-		case MOUNTAIN:
-			bikeFactory = new MountainBikeFactory();
-			break;
-		default:
-			bikeFactory = new RoadBikeFactory();
+		if(type == BikeType.MOUNTAIN) {
+			Tire tire = new MountainBikeTire();
+			Handle handle = new MountainBikeHandle();
+
+			System.out.println(tire.getDescription());
+			System.out.println(handle.getDescription());
+		} else {
+			Tire tire = new RoadBikeTire();
+			Handle handle = new RoadBikeHandle();
+
+			System.out.println(tire.getDescription());
+			System.out.println(handle.getDescription());
 		}
-		Tire tire = bikeFactory.createTire();
-		System.out.println(tire.getDescription());
 	}
 
 }

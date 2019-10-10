@@ -1,4 +1,4 @@
-package divyavijay.DesignPatterns.Creational.AbstractFactory;
+package divyavijay.DesignPatterns.Creational.AbstractFactory.POJO;
 
 /**
  * @Date : Oct 9, 2019

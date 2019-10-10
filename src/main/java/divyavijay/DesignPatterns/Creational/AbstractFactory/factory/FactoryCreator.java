@@ -1,4 +1,6 @@
-package divyavijay.DesignPatterns.Creational.AbstractFactory;
+package divyavijay.DesignPatterns.Creational.AbstractFactory.factory;
+
+import divyavijay.DesignPatterns.Creational.AbstractFactory.POJO.BikeType;
 
 /**
  * @Date : Oct 9, 2019
