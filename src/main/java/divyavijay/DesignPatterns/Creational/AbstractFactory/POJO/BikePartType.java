@@ -6,5 +6,7 @@ package divyavijay.DesignPatterns.Creational.AbstractFactory.POJO;
  * @Author: Divyavijay Sahay  
  */
 
-public abstract class Handle extends BikePart {	
+public enum BikePartType {
+	TIRE,
+	HANDLE
 }
